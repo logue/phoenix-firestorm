@@ -1794,7 +1794,8 @@ https://secondlife.com/support/downloads/
 ＵＲＬ：[UNTRUSTED_URL]
 		<usetemplate ignoretext="ブラウザを起動して、Webページを閲覧するとき" name="okcancelignore" notext="キャンセル" yestext="ＯＫ"/>
 	</notification>
-	<notification name="WebLaunchJoinNow"> [https://secondlife.com/my/account/?lang=ja-JP マイアカウント]ページに移動してアカウントを管理しますか？
+	<notification name="WebLaunchJoinNow">
+		[https://secondlife.com/my/account/?lang=ja-JP マイアカウント]ページに移動してアカウントを管理しますか？
 		<usetemplate ignoretext="ブラウザを起動して、アカウントを管理するとき" name="okcancelignore" notext="キャンセル" yestext="ＯＫ"/>
 	</notification>
 	<notification name="WebLaunchSecurityIssues">
@@ -5353,7 +5354,8 @@ http://opensimulator.org/wiki/inventory を使用して問題を修正できま�
 		Flickr認証に失敗しました。もう一度お試しください。認証コードを必ず再確認してください。
 		<usetemplate name="okbutton" yestext="ＯＫ"/>
 	</notification>
-	<notification name="ExodusFlickrUploadComplete"> スナップショットは[http://www.flickr.com/photos/upload/edit/?ids=[ID] ここ]から閲覧できます。
+	<notification name="ExodusFlickrUploadComplete">
+		スナップショットは[http://www.flickr.com/photos/upload/edit/?ids=[ID] ここ]から閲覧できます。
 	</notification>
 	<!-- </FS:TS> FIRE-5453 -->
 	<notification name="RegionTrackerAdd">
