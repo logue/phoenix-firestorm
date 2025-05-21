@@ -379,6 +379,10 @@ https://secondlife.com/viewer-access-faq
 	<string name="SocialFlickrErrorDisconnecting">
 		Flickrからの切断時にエラーが発生
 	</string>
+	<string name="SocialPrimfeedConnecting">Primfeedに接続しています…</string>
+	<string name="SocialPrimfeedNotAuthorized">認証されていません…</string>
+	<string name="SocialPrimfeedPosting">投稿しています…</string>
+	<string name="SocialPrimfeedErrorPosting">Primfeedへの投稿時に問題が発生しました。</string>
 	<string name="BlackAndWhite">
 		白黒
 	</string>
