@@ -5731,6 +5731,7 @@ www.secondlife.com から最新バージョンをダウンロードしてくだ�
 	<string name="Command_Beacons_Label">ビーコン</string>
 	<string name="Command_Poser_Label">ポーザー</string>
 	<string name="Command_Poser_Tooltip">アバターとアニメーションオブジェクトにポーズをつけます。</string>
+	<string name="Command_Primfeed_Tooltip">Primfeedに直接投稿します。</string>
 	<string name="Command_360_Capture_Tooltip">
 		３６０度の正距円筒図法のスナップショット画像を撮影します。
 	</string>
