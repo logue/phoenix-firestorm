@@ -14,7 +14,7 @@
 	<string name="header_mHindLimbsRoot">後ろ足</string>
 	<string name="header_mWingsRoot">羽</string>
 	<string name="header_mFaceEar1Left">耳／鼻</string>
-    <string name="header_mSkull">体</string>
+	<string name="header_mSkull">体</string>
 	<string name="header_HEAD">体</string>
 	<string name="header_L_UPPER_ARM">腕</string>
 	<string name="header_L_UPPER_LEG">脚</string>
@@ -22,14 +22,14 @@
 	<!-- These are names to appear on the UI for the joints/bones/thingos -->
 	<string name="title_mPelvis">アバター全体</string>
 	<string name="title_mTorso">胴体</string>
-    <string name="title_mSpine1">背骨１</string>
+	<string name="title_mSpine1">背骨１</string>
 	<string name="title_mSpine2">背骨２</string>
 	<string name="title_mSpine3">背骨３</string>
 	<string name="title_mSpine4">背骨４</string>
 	<string name="title_mChest">胸部</string>
 	<string name="title_mNeck">首</string>
 	<string name="title_mHead">頭</string>
-    <string name="title_mSkull">頭蓋骨</string>
+	<string name="title_mSkull">頭蓋骨</string>
 	<string name="title_mEyeRight">右目</string>
 	<string name="title_mEyeLeft">左目</string>
 	<string name="title_mFaceForeheadLeft">額の左側</string>
@@ -41,10 +41,10 @@
 	<string name="title_mFaceEyebrowCenterRight">右眉毛の中側</string>
 	<string name="title_mFaceEyebrowInnerRight">右眉毛の内側</string>
 	<string name="title_mFaceEyeLidUpperLeft">左の上瞼</string>
-    <string name="title_mFaceEyecornerInnerLeft">左の目頭</string>
+	<string name="title_mFaceEyecornerInnerLeft">左の目頭</string>
 	<string name="title_mFaceEyeLidLowerLeft">右の下瞼</string>
 	<string name="title_mFaceEyeLidUpperRight">左の上瞼</string>
-    <string name="title_mFaceEyecornerInnerRight">右の目頭</string>
+	<string name="title_mFaceEyecornerInnerRight">右の目頭</string>
 	<string name="title_mFaceEyeLidLowerRight">右の下瞼</string>
 	<string name="title_mFaceEar1Left">左耳の上</string>
 	<string name="title_mFaceEar2Left">左耳の下</string>
@@ -149,14 +149,14 @@
 	<string name="title_mHindLimb2Right">右２</string>
 	<string name="title_mHindLimb3Right">右３</string>
 	<string name="title_mHindLimb4Right">右４</string>
-    <string name="title_HEAD">頭</string>
+	<string name="title_HEAD">頭</string>
 	<string name="title_NECK">首</string>
 	<string name="title_CHEST">胸</string>
 	<string name="title_BUTT">尻</string>
 	<string name="title_BELLY">腹</string>
 	<string name="title_LEFT_PEC">左胸筋</string>
 	<string name="title_RIGHT_PEC">右胸筋</string>
-    <string name="title_L_CLAVICLE">左鎖骨</string>
+	<string name="title_L_CLAVICLE">左鎖骨</string>
 	<string name="title_R_CLAVICLE">右鎖骨</string>
 	<string name="title_L_UPPER_ARM">左上腕</string>
 	<string name="title_R_UPPER_ARM">右上腕</string>
