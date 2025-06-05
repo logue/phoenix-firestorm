@@ -255,6 +255,7 @@
 						<text name="trackpad_sensitivity_label">
 							トラックパッドの感度：
 						</text>
+						<check_box  name="natural_direction_checkbox" label="自然な配置を使用する" tool_tip="デフォルトのスケルトンの関節の回転は不自然です。そのため、ポージングが複雑になります。このチェックを入れると、関節の回転がより自然になります。"/>
 						<slider name="trackpad_sensitivity_slider" tool_tip="トラックボールの感度を調整します。"/>
 						<check_box name="natural_direction_checkbox" label="自然な配置を使用する" tool_tip="デフォルトでは、スケルトンの関節の回転は不自然です。これにより、ポーズが複雑になります。チェックすると、関節がより自然に回転します。"/>
 						<check_box name="stop_posing_on_close_checkbox" label="閉じたらポーズを止める" tool_tip="ポーズを止めないことは、多くの作業を行っていて、誤ってポーズを失いたくない場合に役に立ちます。"/>
