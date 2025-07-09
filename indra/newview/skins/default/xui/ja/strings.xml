@@ -540,13 +540,16 @@ https://secondlife.com/viewer-access-faq
 		表示されている出品リストを移動できません。
 	</string>
 	<string name="TooltipOutboxCannotMoveRoot">
-		ルートフォルダを出品リストに表示するマーケットプレイスを移動できません。
+		マーケットプレイスの出品リストのルートフォルダは移動できません。
 	</string>
 	<string name="TooltipOutboxMixedStock">
 		在庫フォルダ内のアイテムは、すべて同じ種類と権限でなければなりません。
 	</string>
 	<string name="TooltipCantCreateOutfit">
 		１つ以上のアイテムが 「アウトフィット」内で使用できません。
+	</string>
+	<string name="TooltipCantMoveOutfitIntoOutfit">
+		アウトフィットを別のアウトフィットに移動することはできません。
 	</string>
 	<string name="TooltipOutfitNotInInventory">
 		「アウトフィット」に入れることができるのは、自分のインベントリにあるアイテムや衣装のみです。
