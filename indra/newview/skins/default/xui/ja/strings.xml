@@ -3,9 +3,6 @@
 	<string name="SUPPORT_SITE">
 		Firestormサポートポータル
 	</string>
-	<string name="StartupDetectingHardware">
-		ハードウェアを検出しています…
-	</string>
 	<string name="StartupLoading">
 		[APP_NAME]をインストールしています…
 	</string>
@@ -54,7 +51,7 @@ SLURL：&lt;nolink&gt;[SLURL]&lt;/nolink&gt;
 フォントサイズの調整：[FONT_SIZE]pt
 ＵＩスケーリング：[UI_SCALE_FACTOR]
 描画距離：[DRAW_DISTANCE]ｍ
-帯域幅：[BANDWITH]kbit／秒
+帯域幅：[BANDWIDTH]kbit／秒
 ＬＯＤ係数：[LOD]
 描画の質：[RENDERQUALITY]
 	</string>
