@@ -244,7 +244,7 @@
 			</text>
 			<button name="Prev_UISndChatMention" tool_tip="このサウンドをプレビューします。"/>
 			<button name="Def_UISndChatMention" tool_tip="デフォルトのＵＵＩＤにリセットします。"/>
-			<check_box label="Play this sound" name="PlayModeUISndChatMention"/>
+			<check_box label="このサウンドを再生" name="PlayModeUISndChatMention"/>
 			<text tool_tip="新しくオブジェクトを作成した時に再生するサウンドのＵＵＩＤです。" name="textFSObjectCreate">
 				オブジェクト作成：
 			</text>
