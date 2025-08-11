@@ -93,6 +93,9 @@
 	<string name="tbd">
 		未計算
 	</string>
+	<string name="ModelTextureScaling">
+		このモデル内の１つ以上のテクスチャが、許容画像サイズ内に収まるようにスケーリングされました。
+	</string>
 	<!-- Warnings and info from model loader-->
 	<string name="TooManyJoint">
 		ジョイントが多すぎるためスキニングが無効化されました：[MAX]個中[JOINTS]個
