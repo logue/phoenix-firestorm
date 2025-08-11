@@ -17,6 +17,14 @@
 			<stat_view label="高度な情報" name="advanced">
 				<stat_view label="描画" name="render">
 					<stat_bar label="フレームあたりのKTris" name="ktrisframe" unit_label="ktris／フレーム"/>
+					<stat_bar name="framet_cumulative" label="累積ジッタ"/>
+					<stat_bar name="framet_jitter_99th" label="ジッタ９９の分布"/>
+					<stat_bar name="framet_jitter_95th" label="ジッタ９５の分布"/>
+					<stat_bar name="framet_jitter_stddev" label="ジッタの標準偏差"/>
+					<stat_bar name="framet_99th" label="フレームタイム９９の分布"/>
+					<stat_bar name="framet_95th" label="フレームタイム９５の分布"/>
+					<stat_bar name="framet_stddev" label="フレームタイムの標準偏差"/>
+					<stat_bar name="framet_events" label="フレームタイムのイベント"/>
 					<stat_bar label="秒あたりのKTris" name="ktrissec"/>
 					<stat_bar name="objs" label="オブジェクトの総計"/>
 					<stat_bar label="キャッシュされたオブジェクト" name="cachedobjs"/>
