@@ -1338,6 +1338,7 @@ https://secondlife.com/viewer-access-faq
 	</string>
 	<string name="backup_files">オブジェクトのバックアップ</string>
 	<string name="collada_files">COLLADAモデル</string>
+    <string name="model_files">メッシュモデル</string>
 	<string name="csv_files">カンマ区切り値</string>
 	<string name="recompile_script_verb">
 		再コンパイル
