@@ -1313,7 +1313,7 @@ L$が不足しているので、このグループに参加することができ
 		</form>
 	</notification>
 	<notification label="自動置換リストの削除" name="RemoveAutoReplaceList">
-「[LIST_NAME]」は[MAP_SIZE]箇所のエントリがあります。
+		「[LIST_NAME]」は[MAP_SIZE]箇所のエントリがあります。
 
 このリストを削除してもよろしいですか？
 		<tag>confirm</tag>

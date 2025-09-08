@@ -1338,7 +1338,7 @@ https://secondlife.com/viewer-access-faq
 	</string>
 	<string name="backup_files">オブジェクトのバックアップ</string>
 	<string name="collada_files">COLLADAモデル</string>
-    <string name="model_files">メッシュモデル</string>
+	<string name="model_files">メッシュモデル</string>
 	<string name="csv_files">カンマ区切り値</string>
 	<string name="recompile_script_verb">
 		再コンパイル
@@ -1955,6 +1955,9 @@ https://support.secondlife.com よりSecond Lifeのサポートまでお問い�
       Also, it can be written as "Favorite" or "Favorites".
   We should localize all variants of them with the same value -->
 	<string name="InvFolder favorite">
+		お気に入り
+	</string>
+	<string name="InvFolder Favorites">
 		お気に入り
 	</string>
 	<string name="InvFolder favorites">
