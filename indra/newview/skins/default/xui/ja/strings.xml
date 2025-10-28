@@ -2255,11 +2255,6 @@ https://support.secondlife.com よりSecond Lifeのサポートまでお問い�
 		[HUD_DETAILS]は、使用されているテクスチャが多すぎます。
 	</string>
 
-	<!-- AgeYearsA = singular,
-	AgeYearsB = plural,
-	AgeYearsC = plural for non-English languages like Russian
-	For example, LLTrans::getCountString("AgeYears", 3) is plural form B
-	in English and form C in Russian -->
 	<string name="AgeYearsA">
 		[COUNT]年
 	</string>
@@ -2477,8 +2472,6 @@ https://support.secondlife.com よりSecond Lifeのサポートまでお問い�
 	<string name="AlreadyInGroup">
 		すでにグループに入っています：
 	</string>
-	<!-- floater IM bonus_info: When a Linden with Admin/god status receives a new IM this displays the estate (Mainland vs. teen grid) of the source avatar.
-	This is to help Lindens when answering questions. -->
 	<string name="IMParentEstate">
 		親の不動産
 	</string>
@@ -5412,8 +5405,6 @@ www.secondlife.com から最新バージョンをダウンロードしてくだ�
 	<string name="dateTimeWeekdaysShortNames">
 		日:月:火:水:木:金:土
 	</string>
-	<!-- overriding datetime formating.
-	didn't translate if this is not needed for current localization -->
 	<string name="dateTimeMonthNames">
 		1:2:3:4:5:6:7:8:9:10:11:12
 	</string>
