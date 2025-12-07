@@ -2594,10 +2594,10 @@ https://community.secondlife.com/knowledgebase/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83
 		[AMOUNT]個以上のアイテムを含むフォルダを装着できません。「高度な操作」＞「デバッグ設定を表示」＞「WearFolderLimit」でこの制限を変更できます。
 	</notification>
 	<notification name="CantLinkNotecard">
-    リンクを作成する前に、ノートカードを保存する必要があります。
+		リンクを作成する前に、ノートカードを保存する必要があります。
 	</notification>
 	<notification name="CantLinkMaterial">
-    リンクを作成する前に、ノートカードを保存する必要があります。
+		リンクを作成する前に、ノートカードを保存する必要があります。
 	</notification>
 	<notification label="「取り込み中」モードの警告" name="DoNotDisturbModePay">
 		「取り込み中」をオンにします。この状態では、お金を支払ったり交換したときにアイテムが受信されなくなります。
