@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <floater name="omnifilter" title="包括フィルタのルールエディタ">
+	<floater.string name="OmnifilterNewNeedle">
+		新しいルール
+	</floater.string>
 	<layout_stack name="needle_list_stack">
 		<layout_panel name="needle_list_layout">
 			<check_box name="enable_omnifilter" label="包括フィルタを有効化"/>
