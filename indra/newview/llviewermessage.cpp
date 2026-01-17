@@ -1840,10 +1840,10 @@ void LLOfferInfo::handleRespond(const LLSD& notification, const LLSD& response)
     mRespondFunctions[name](notification, response);
 }
 
-void inventory_offer_name_callback(const LLAvatarName& av_name, std::string message)
+void inventory_offer_name_callback(const LLAvatarName& av_name, const std::string& from_name, const std::string& message)
 {
     LLSD args;
-    args["MESSAGE"] = llformat(message.c_str(), av_name.getUserName().c_str());
+    args["MESSAGE"] = llformat(from_name.c_str(), av_name.getUserName().c_str()) + message;
     LLNotificationsUtil::add("SystemMessageTip", args);
 }
 
@@ -1992,8 +1992,7 @@ bool LLOfferInfo::inventory_offer_callback(const LLSD& notification, const LLSD&
             size_t separator_idx = mFromName.find('|');
             if (separator_idx != std::string::npos && LLUUID::parseUUID(mFromName.substr(0, separator_idx), &inv_sender_id) && mFromName.size() > (++separator_idx))
             {
-                log_message = mFromName.substr(separator_idx) + log_message;
-                LLAvatarNameCache::instance().get(inv_sender_id, boost::bind(&inventory_offer_name_callback, _2, log_message));
+                LLAvatarNameCache::instance().get(inv_sender_id, boost::bind(&inventory_offer_name_callback, _2, mFromName.substr(separator_idx), log_message));
             }
             else
             {
@@ -3300,12 +3299,14 @@ void process_chat_from_simulator(LLMessageSystem *msg, void **user_data)
                         ((LLVOAvatar*)chatter)->stopTyping();
                     }
 
-                    if (needle->mChatReplace.empty())
+                    if (needle->mChatReplace.empty())       // no replacement defined, just suppress the message
                     {
                         return;
                     }
 
-                    chat.mText = needle->mChatReplace;
+                    LLSD args;
+                    args["REPLACEMENT"] = needle->mChatReplace;
+                    chat.mText = LLTrans::getString("OmnifilterReplacement", args);
                 }
 
                 break;
@@ -7274,7 +7275,7 @@ bool script_question_cb(const LLSD& notification, const LLSD& response)
 // [RLVa:KB] - Checked: 2012-07-28 (RLVa-1.4.7)
     if ( (allowed) && (notification["payload"].has("rlv_blocked")) )
     {
-        RlvUtil::notifyBlocked(notification["payload"]["rlv_blocked"], LLSD().with("OBJECT", notification["payload"]["object_name"]));
+        RlvUtil::notifyBlocked(notification["payload"]["rlv_blocked"].asString(), LLSD().with("OBJECT", notification["payload"]["object_name"]));
     }
 // [/RLVa:KB]
 

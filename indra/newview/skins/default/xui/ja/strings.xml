@@ -6602,5 +6602,6 @@ Rez時間：[OBJECT_REZ_TIME]
 	<string name="Ultra">ウルトラ</string>
 	<string name="Maximum">最大</string>
 
-	<string name="OmnifilterNewNeedle">新しいルール</string>	<!-- <FS:Zi> Omnifilter -->
+	<string name="OmnifilterReplacement">包括フィルタ置き換え：[REPLACEMENT]</string>
+
 </strings>
