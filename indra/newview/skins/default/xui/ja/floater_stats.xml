@@ -106,7 +106,7 @@
 				</stat_view>
 			</stat_view>
 			<stat_view name="voice" label="ボイス">
-				<stat_bar name="webrtc_latency" label="遅延"  unit_label="㎳"/>
+				<stat_bar name="webrtc_latency" label="遅延" unit_label="㎳"/>
 				<stat_bar name="webrtc_upload_bandwidth" label="アップロード帯域" unit_label="kbps"/>
 				<stat_view name="incoming_audio" label="受信オーディオ">
 					<stat_bar name="incoming_packet_recv" label="受信パケット"/>

@@ -24,7 +24,7 @@
 			<combo_box.item label="上のグループ一覧" name="above"/>
 			<combo_box.item label="隠す" name="hidden"/>
 		</combo_box>
-		<check_box  label="コンタクトセットのリストにプロフィールアイコンを表示する" name="FSContactSetsListShowIcons"/>
+		<check_box label="コンタクトセットのリストにプロフィールアイコンを表示する" name="FSContactSetsListShowIcons"/>
 		<color_swatch label="デフォルトのセットの色" name="global_swatch" tool_tip="クリックしてカラーピッカーを開きます。"/>
 		<color_swatch name="offline_swatch" tool_tip="コンタクトセットリスト内で、どのコンタクトセットにも属さないオフラインのコンタクトで使用される色を指定します。カスタムコンタクトセットの色が優先されます。"/>
 		<check_box label="カスタムのオフラインのコンタクトの色" name="FSContactSetsListColorizeOffline"/>
