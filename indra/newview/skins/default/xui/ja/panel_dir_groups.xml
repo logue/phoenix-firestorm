@@ -15,7 +15,7 @@
 	</text>
 	<!-- <FS:TJ> Fix legacy group search to better support maturity settings
 	<check_box label="成人向けグループを含む" name="incmature"/>
-    </FS:TJ> -->
+	</FS:TJ> -->
 	<scroll_list name="results">
 		<column label="名前" name="name"/>
 		<column label="メンバー" name="members"/>
