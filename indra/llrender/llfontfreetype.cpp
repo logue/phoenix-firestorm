@@ -112,7 +112,7 @@ LLFontGlyphInfo::LLFontGlyphInfo(U32 index, EFontGlyphType glyph_type)
     mChar(0),
     mWidth(0),          // In pixels
     mHeight(0),         // In pixels
-    mXAdvance(0.f),     // In pixels
+    mXAdvanceRaw(0.f),  // In pixels
     mYAdvance(0.f),     // In pixels
     mXBitmapOffset(0),  // Offset to the origin in the bitmap
     mYBitmapOffset(0),  // Offset to the origin in the bitmap
@@ -130,7 +130,7 @@ LLFontGlyphInfo::LLFontGlyphInfo(const LLFontGlyphInfo& fgi)
     , mChar(fgi.mChar)
     , mWidth(fgi.mWidth)
     , mHeight(fgi.mHeight)
-    , mXAdvance(fgi.mXAdvance)
+    , mXAdvanceRaw(fgi.mXAdvanceRaw)
     , mYAdvance(fgi.mYAdvance)
     , mXBitmapOffset(fgi.mXBitmapOffset)
     , mYBitmapOffset(fgi.mYBitmapOffset)
@@ -355,14 +355,14 @@ F32 LLFontFreetype::getXAdvance(llwchar wch) const
         {
             return mMaxDigitWidth;
         }
-        return gi->mXAdvance;
+        return gi->mXAdvanceRaw;
     }
     else
     {
         char_glyph_info_map_t::iterator found_it = mCharGlyphInfoMap.find((llwchar)0);
         if (found_it != mCharGlyphInfoMap.end())
         {
-            return found_it->second->mXAdvance;
+            return found_it->second->mXAdvanceRaw;
         }
     }
 
@@ -383,7 +383,7 @@ F32 LLFontFreetype::getXAdvance(const LLFontGlyphInfo* glyph) const
         return mMaxDigitWidth;
     }
 
-    return glyph->mXAdvance;
+    return glyph->mXAdvanceRaw;
 }
 
 F32 LLFontFreetype::getXKerning(llwchar char_left, llwchar char_right) const
@@ -605,7 +605,7 @@ LLFontGlyphInfo* LLFontFreetype::addGlyphFromFont(const LLFontFreetype *fontp, l
     gi->mLsbDelta = (S32)fontp->mFTFace->glyph->lsb_delta;
     gi->mRsbDelta = (S32)fontp->mFTFace->glyph->rsb_delta;
     // Convert these from 26.6 units to float pixels.
-    gi->mXAdvance = fontp->mFTFace->glyph->advance.x / 64.f;
+    gi->mXAdvanceRaw = fontp->mFTFace->glyph->advance.x / 64.f;
     gi->mYAdvance = fontp->mFTFace->glyph->advance.y / 64.f;
 
     // <FS:Ansariel> Optional tabular numeric font rendering
@@ -613,9 +613,9 @@ LLFontGlyphInfo* LLFontFreetype::addGlyphFromFont(const LLFontFreetype *fontp, l
     if (mTabnum && mWeight > 0 && wch >= '0' && wch <= '9')
     {
         // Digits are supposed to be preloaded, and buffers
-        // refresh when new chars get added, so this lazy load
-        // should not cause any issues.
-        mMaxDigitWidth = llmax(mMaxDigitWidth, gi->mXAdvance);
+        // refresh when new chars get added (mGeneration),
+        // so this lazy load should not cause any issues.
+        mMaxDigitWidth = llmax(mMaxDigitWidth, gi->mXAdvanceRaw);
     }
 
     insertGlyphInfo(wch, gi);
@@ -1054,30 +1054,39 @@ namespace ll
 
 U8 const* LLFontManager::loadFont( std::string const &aFilename, long &a_Size)
 {
-    a_Size = 0;
-    std::map< std::string, std::shared_ptr<ll::fonts::LoadedFont> >::iterator itr = m_LoadedFonts.find( aFilename );
-    if( itr != m_LoadedFonts.end() )
+    try
     {
-        ++itr->second->mRefs;
-        // A possible overflow cannot happen here, as it is asserted that the size is less than std::numeric_limits<long>::max() a few lines below.
-        a_Size = static_cast<long>(itr->second->mSize);
+        a_Size = 0;
+        std::map< std::string, std::shared_ptr<ll::fonts::LoadedFont> >::iterator itr = m_LoadedFonts.find(aFilename);
+        if (itr != m_LoadedFonts.end())
+        {
+            ++itr->second->mRefs;
+            // A possible overflow cannot happen here, as it is asserted that the size is less than std::numeric_limits<long>::max() a few lines below.
+            a_Size = static_cast<long>(itr->second->mSize);
+            return reinterpret_cast<U8 const*>(itr->second->mAddress.c_str());
+        }
+
+        auto strContent = LLFile::getContents(aFilename);
+
+        if (strContent.empty())
+            return nullptr;
+
+        // For fontconfig a type of long is required, std::string::size() returns size_t. I think it is safe to limit this to 2GiB and not support fonts that huge (can that even be a thing?)
+        llassert_always(strContent.size() < std::numeric_limits<long>::max());
+
+        a_Size = static_cast<long>(strContent.size());
+
+        auto pCache = std::make_shared<ll::fonts::LoadedFont>(aFilename, strContent, a_Size);
+        itr = m_LoadedFonts.insert(std::make_pair(aFilename, pCache)).first;
+
         return reinterpret_cast<U8 const*>(itr->second->mAddress.c_str());
     }
-
-    auto strContent = LLFile::getContents(aFilename);
-
-    if( strContent.empty() )
-        return nullptr;
-
-    // For fontconfig a type of long is required, std::string::size() returns size_t. I think it is safe to limit this to 2GiB and not support fonts that huge (can that even be a thing?)
-    llassert_always( strContent.size() < std::numeric_limits<long>::max() );
-
-    a_Size = static_cast<long>(strContent.size());
-
-    auto pCache = std::make_shared<ll::fonts::LoadedFont>( aFilename,  strContent, a_Size );
-    itr = m_LoadedFonts.insert( std::make_pair( aFilename, pCache ) ).first;
-
-    return reinterpret_cast<U8 const*>(itr->second->mAddress.c_str());
+    catch (const std::bad_alloc&)
+    {
+        LLError::LLUserWarningMsg::showOutOfMemory();
+        LL_ERRS() << "Failed to load font. Out of memory." << LL_ENDL;
+    }
+    return nullptr;
 }
 
 void LLFontManager::unloadAllFonts()
